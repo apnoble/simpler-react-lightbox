@@ -1,11 +1,16 @@
-# Simple React Lightbox (SRL)
+# Simpler React Lightbox (SRL) (forked for personal usage)
+
+> Do not use this. This will not be maintained! This is a one-time fork for personal usage.
+
+## Changes from original
+
+- Add `cache: "no-cache"` for image download
+
+---
 
 ![Simple React Lightbox - Logo](https://simple-react-lightbox.dev/docs/SRL_Logo_Git.jpeg)
 
-[![NPM](https://img.shields.io/npm/v/simple-react-lightbox.svg)](https://www.npmjs.com/package/simple-react-lightbox) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![Build Status](https://travis-ci.com/michelecocuccio/simple-react-lightbox.svg?token=RytKLBgaYszcR25z6ZLP&branch=master)](https://travis-ci.com/michelecocuccio/simple-react-lightbox)
-
-
-[![buymeacoffe](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/michelecocuccio)
+[![NPM](https://img.shields.io/npm/v/simpler-react-lightbox.svg)](https://www.npmjs.com/package/simpler-react-lightbox) 
 
 **Simple React Lightbox** gives you the ability to add a lightbox functionality on a set of images (or videos/audio if you are using the PRO version), whether you define them yourself or you get them from an external source (API, backend etc…). Just use the provided component to wrap your app, define your options and then use the `<SRLWrapper>`  component by wrapping it around the content in which you have or expect your images or videos!
 
@@ -56,13 +61,13 @@ I have also created a **full working website** where you can see the lightbox in
 #### Install
 
 ```bash
-npm install --save simple-react-lightbox
+npm install --save simpler-react-lightbox
 ```
 
 or with Yarn
 
 ```bash
-yarn add simple-react-lightbox
+yarn add simpler-react-lightbox
 ```
 
 The installation for the PRO version is slightly different. You will get instructions on how to install the PRO version after the purchase on the [Simple React Lightbox - website](https://simple-react-lightbox.dev).
@@ -76,15 +81,15 @@ First of all you need to **wrap your React app with the main component** so that
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import SimpleReactLightbox from 'simple-react-lightbox'
+import SimplerReactLightbox from 'simpler-react-lightbox'
 // USE THE IMPORT BELOW INSTEAD IF YOU ARE USING THE PRO VERSION
 // import SimpleReactLightbox from 'simple-react-lightbox-pro'
 
 ReactDOM.render(
   <React.StrictMode>
-    <SimpleReactLightbox>
+    <SimplerReactLightbox>
       <App />
-    </SimpleReactLightbox>
+    </SimplerReactLightbox>
   </React.StrictMode>,
   document.getElementById("root")
 );
@@ -99,7 +104,7 @@ Note: *If you need multiple instances of the lightbox in a single page you shoul
 Next you want to import and use the `<SRLWrapper>` component wherever you expect the content with the images or videos. Please note the `{}` as this is a named export. The caption for the images will be generated from the [image "alt" attribute](https://www.w3schools.com/tags/tag_img.asp) so don't forget to add it. The caption for the video and audio elements is manually defined as explained in its own section.
 
 ```jsx
-import { SRLWrapper } from "simple-react-lightbox";
+import { SRLWrapper } from "simpler-react-lightbox";
 // USE THE IMPORT BELOW INSTEAD IF YOU ARE USING THE PRO VERSION
 // import { SRLWrapper } from 'simple-react-lightbox-pro'
 
@@ -133,7 +138,7 @@ The anchor tag will point to the full width image while the image will act as th
 🆕 If the thumbnail is not recognized (for example this happens using NextJS image component), simply add the attribute `srl_gallery_image="true"` to the image or the component.
 
 ```jsx
-import { SRLWrapper } from "simple-react-lightbox";
+import { SRLWrapper } from "simpler-react-lightbox";
 import Image from 'next/image'
 
 // USE THE IMPORT BELOW INSTEAD IF YOU ARE USING THE PRO VERSION
@@ -170,7 +175,7 @@ As stated, Simple React Lightbox is different from the competition. But that doe
 Passing `src` is the only mandatory requirement for passing a valid element.
 
 ```jsx
-import { SRLWrapper } from "simple-react-lightbox";
+import { SRLWrapper } from "simpler-react-lightbox";
 // USE THE IMPORT BELOW INSTEAD IF YOU ARE USING THE PRO VERSION
 // import { SRLWrapper } from 'simple-react-lightbox-pro'
 
@@ -231,7 +236,7 @@ const options = {
 import React from "react";
 import MyComponent from "./components/MyComponent";
 // Import SRLWrapper
-import {SRLWrapper} from "simple-react-lightbox";
+import {SRLWrapper} from "simpler-react-lightbox";
 
 // Create an object with the options that you want to use. The options are divided in 4 main objects. You don't need to define them all.
 const options = {
@@ -526,7 +531,7 @@ A valid YouTube URL will look like this: https://www.youtube.com/watch?v=aS1no1m
 In the case of web videos you can pass them as per usual using the HTML `video` element. In this case you will pass the custom HTML attributes to the `video` element.
 
 ```jsx
-import { SRLWrapper } from "simple-react-lightbox";
+import { SRLWrapper } from "simpler-react-lightbox";
 // USE THE IMPORT BELOW INSTEAD IF YOU ARE USING THE PRO VERSION
 // import { SRLWrapper } from 'simple-react-lightbox-pro'
 
@@ -616,7 +621,7 @@ Check the example on the [demo website](https://simple-react-lightbox.dev/with-c
 - All the settings about the caption are being ignored if you are using a custom caption. You dictate the style of your custom caption. Keep in mind that the caption was designed to be just that, a caption, and I am not responsible if your layout breaks for any reason (like if you put too many things in it).
 
 ```jsx
-  import { SRLWrapper } from "simple-react-lightbox";
+  import { SRLWrapper } from "simpler-react-lightbox";
   // USE THE IMPORT BELOW INSTEAD IF YOU ARE USING THE PRO VERSION
   // import { SRLWrapper } from 'simple-react-lightbox-pro'
 
@@ -670,7 +675,7 @@ If you are using the PRO version version you can use overlay on the images. This
 The code structure must follow the exact order (DIV with the overlay first, image after) as shown in the code example (the overlay structure is entirely up to you of course). Overlay CSS is up to you of course and the overlay must be on top of the image in order to be clickable.
 
 ```jsx
-import { SRLWrapper } from "simple-react-lightbox";
+import { SRLWrapper } from "simpler-react-lightbox";
 // USE THE IMPORT BELOW INSTEAD IF YOU ARE USING THE PRO VERSION
 // import { SRLWrapper } from 'simple-react-lightbox-pro'
 
@@ -727,7 +732,7 @@ The second one is `closeLightbox` and you can use it to close the lightbox.
 Check the [demo](#demo) to see it in action. In the example below we are creating a **reusable** React component (a button) that can open the lightbox from anywhere in your app. **Please note that from version 2.8 you need to destructure the useLightbox() hook to get the function that you need.**
 
 ```jsx
-import { useLightbox } from 'simple-react-lightbox'
+import { useLightbox } from 'simpler-react-lightbox'
 // USE THE IMPORT BELOW INSTEAD IF YOU ARE USING THE PRO VERSION
 // import { useLightbox } from 'simple-react-lightbox-pro'
 
@@ -766,7 +771,7 @@ Callbacks are passed with the **callbacks** prop to the SRLWrapper.
 I will strongly recommend to create a constant with all of your callbacks and then pass it to the component with the prop **callbacks**.
 
 ```jsx
-import { SRLWrapper } from "simple-react-lightbox";
+import { SRLWrapper } from "simpler-react-lightbox";
 // USE THE IMPORT BELOW INSTEAD IF YOU ARE USING THE PRO VERSION
 // import { SRLWrapper } from 'simple-react-lightbox-pro'
 
@@ -797,7 +802,7 @@ I have noticed that sometimes Firefox has issues on rendering the "slide" animat
 If you really want the transparency you can do a little hack and change the variable if the browser is Firefox. This only occurs rarely and especially with the "slide" animation. The "fade" animation should work perfectly regardless.
 
 ```jsx
-import { SRLWrapper } from "simple-react-lightbox";
+import { SRLWrapper } from "simpler-react-lightbox";
 // USE THE IMPORT BELOW INSTEAD IF YOU ARE USING THE PRO VERSION
 // import { SRLWrapper } from 'simple-react-lightbox-pro'
 

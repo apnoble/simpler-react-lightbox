@@ -199,7 +199,7 @@ const SRLLightboxGallery = ({
 
   // Handle Image Download
   const toDataURL = (url) =>
-    fetch(url)
+    fetch(url, { cache: 'no-cache' })
       .then((response) => response.blob())
       .then(
         (blob) =>
